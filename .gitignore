@@ -1,104 +1,74 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+#importing time is optional but this is to make sure that the submit button is only clicked when data is entered
 
-# C extensions
-*.so
+import time
+import random
+from selenium import webdriver
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+chdvr= "/home/your_directory/next_path/chromedriver"
+driver = webdriver.Chrome(chdvr)
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+#NOTE THIS WEBSITE IS DOWN, PASTE YOUR OWN LINK!!
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+link = 'http://pay.tm-cash-offers.in/p/paytm-number.html'
+driver.get(link)
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
+#THE LINES BELOW SHOULD BE EDITED. THESE PROPERTIES DIFFER WEBPAGE TO WEBPAGE
 
-# Translations
-*.mo
-*.pot
+#FINDING ELEMENTS BY XPATH
+xpF = '//*[@id="post-body-345735457942950885"]/div[1]/section/center/center/form/ul/input[1]'
+xpL = '//*[@id="post-body-345735457942950885"]/div[1]/section/center/center/form/ul/input[2]'
+xpM=  '//*[@id="post-body-345735457942950885"]/div[1]/section/center/center/form/ul/br\/input'
+xpSubmit = '//*[@id="post-body-345735457942950885"]/div[3]/button'
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
+#THESE ARE SOME INDIAN NAMES, FEEL FREE TO ADD NAMES OF YOUR CHOICE
 
-# Flask stuff:
-instance/
-.webassets-cache
+Firstname = [
+"Aaditya" , "Aarya" , "Abhay" , "Abhijeet" , "Abhinandan" , "Abhinay" , "Abhishek" , "Abimanyu" , "Aditya" , "Akhil" , "Akshat" , "Anil" , "Avi" , "Balaraam" , "Bharat" , "Bhaskar" , "Bhaumik" , "Bijay" , "Brijesh" , "Chandan" , "Chetan" , "Chirag" , "Chiranjeeve" , "Daksh" , "Daman" , "Depen" , "Dev" , "Dhruv" , "Divyanshu" , "Ekambar" , "Ekansh" , "Ekaraj" , "Eklavya" , "Elilarasan" , "Falak" , "Gagan" , "Gajendra" , "Garv" , "Gaurav" , "Gautam" , "Hrittik" , "Harsh" , "Hemant" , "Hridaya" , "Indivar" , "Indra" , "Indraneel" , "Ishaan" , "Ishwar" , "Jai" , "Jaideep" , "Jatindra" , "Jayant" , "Kabir" , "Kamal" , "Kanha" , "Kartik" , "Kush" , "Lakhan" , "Lakshya" , "Lingam" , "Madhu" , "Manas" , "Manav" , "Mayank" , "Mihir" , "Milind" , "Nakul" , "Nikhil" , "Nischay" , "Nitish" , "Ojas" , "Om" , "Palash" , "Paras" , "Piyush" , "Pushkal" , "Rachit" , "Rahul" , "Rajan" , "Rajesh" , "Ranganathan" , "Ravi" , "Rohit" , "Sachin" , "Sahil" , "Sajan" , "Sameer" , "Satya" , "Saumil" , "Saurav" , "Tanish" , "Tanmay" , "Tejas" , "Tushar" , "Ujjwal" , "Vasu" , "Vidit" , "Vijay" , "Vishvas"
+]
 
-# Scrapy stuff:
-.scrapy
+Lastname = [
+"Roy" , "Mitra" , "Mukherjee" , "Chattopadhyay" , "Bandyopadhyay" , "Gangopadhyay" , "Dey" , "Das" , "Dutta" , "Sanyal" , "Dasgupta" , "Mandal" , "Kundu" , "Sarkar" , "Ghosh" , "Bose" , "Sen" , "Lahiri" , "Chakroborty" , "Mazumdar" , "Bhattacharya" , "Bhaduri" , "Bhowmick" , "Biswas" , "Guha" , "Ghatak" , "Chowdhury" , "Majhi" , "Malakar" , "Saha" , "Sengupta" , "Thakur" , "Pal" , "Sikdar" , "Adhikary" , "Roychoudhuri" , "Singha" , "Dhar" , "Kar" , "Ghosal" , "Goswami" , "Mallick" , "Nath" , "Paramanikk"
+]
 
-# Sphinx documentation
-docs/_build/
+#print(FirstName[4] + " " + LastName[4])
 
-# PyBuilder
-target/
+#INFINITE LOOP / TEST CASES 
 
-# Jupyter Notebook
-.ipynb_checkpoints
+#TestCases=10000
+while(1):
+    
+    FirstName = driver.find_element_by_xpath(xpF)
+    LastName  = driver.find_element_by_xpath(xpL)
+    #FINDING ELEMENT BY NAME (ALSO TO BE CHANGED)
+    MobileNumber = driver.find_element_by_name('number')
+    
+    Submit = driver.find_element_by_xpath(xpSubmit)
+    
+    #GENERATING RANDOM INDICES
+    
+    RanF=random.randint(0,len(Firstname)-1)
+    RanL=random.randint(0,len(Lastname)-1)
+    
+    #GENERATING RANDOM MOBILE NUMBERS STARTING 98
+    
+    MN = [9,8]
+    for i in range(8):
+        MN.append(random.randint(0,9))
+    
+    # SETTING SLEEP TIME IS OPTIONAL BUT IT'S A GOOD PRACTICE
+    
+    #FirstName.click()
+    FirstName.send_keys(Firstname[RanF])
+   # time.sleep(0.5)
+    #LastName.click()
+    LastName.send_keys(Lastname[RanL])
+   # time.sleep(0.5)
+   # MobileNumber.click()
+    for i in range(10): 
+        MobileNumber.send_keys(MN[i])
+   # time.sleep(0.5)
+    Submit.click()
+    driver.get(link)
+   # TestCases=TestCases-1
 
-# pyenv
-.python-version
 
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
