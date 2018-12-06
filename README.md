@@ -5,7 +5,7 @@ NOTE: The following website is down apparently
 
 A few days ago http://pay.tm-cash-offers.in this link was sent to me via WhatsApp. Obviously this is not the genuine site and quite mallicious. This site was taking data (Name and mobile number) with a promise to reward 1000 Rupees to whoever answers 4 simple questions. Now Obviously the questions were only for show and one could easily bypass the 4 quesions stage of the website. Later the site demands to share the link of this website to 20 more friends on WhatsApp to collect the money. Now Even after clicking more than 100 times there was no signs of truth in their words.
 
-That's why I thought, what if I could stop them. 
+I thought, what if I could stop them...
 
 I created a simple python program with selenium that automates the data sending process and spamms their server with real looking 'fake' data.
 
