@@ -29,6 +29,7 @@ Q. How it is actually helping?
 A. By sending real looking data to the scammers, we actually make them think the data is real and they have no way other than calling the individual phone numbers to verify the genuinity. Meanwhile if a genuine guy guy enters data during the process of spamming, the real data gets sandwitched inside thousands of fake data. So there is no other way other than calling and verifying each individual phone number. This wastes the time of scammer. 
 
 Q. How this can be imporved ?
+
 A. By making a long list of names and surnames, by generating more authentic phone numbers by setting the first few digits in  a pre defined way (according to the telecom operators) i.e setting first four digits as "9836"(vodafone india) then the rest 6 digits are set randomly.
 
 P.S NOTE: THE WEBSITE IS CURRENTLY DOWN. THE UPLOADED CODE DOESN'T WORK ANYMORE HOWEVER, THERE ARE CURRENTLY MANY MORE SCAMMY WEBSITES. SETTING YOUR OWN XPATH AND FIND BY ID WITH NEW LINK YOU COULD EFFICTIVELY DO THE SAME THING.
